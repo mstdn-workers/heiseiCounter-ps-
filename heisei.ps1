@@ -11,11 +11,10 @@ $span = New-TimeSpan $now "2019/4/30 23:59:59"
 #投稿テキスト整形
 $text = "現在の時刻：" + $now + "`
 平成終了まで`
-・" + [Math]::Truncate($span.TotalDays)  + "日`
-・" + [Math]::Truncate($span.TotalHours) + "時間`
-・" + [Math]::Truncate($span.TotalMinutes) + "分`
-・" + [Math]::Truncate($span.TotalSeconds) + "秒`
-・" + [Math]::Truncate($span.TotalMilliseconds) + "ミリ秒"
+・" + [Math]::Truncate($span.TotalDays).toString("#,#")  + "日`
+・" + [Math]::Truncate($span.TotalHours).toString("#,#") + "時間`
+・" + [Math]::Truncate($span.TotalMinutes).toString("#,#") + "分`
+・" + [Math]::Truncate($span.TotalSeconds).toString("#,#") + "秒"
 
 #toot API URL
 $tootUri = "https://" + $domain + "/api/v1/statuses"
